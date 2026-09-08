@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Central Sacred Diya & Radiant Flame Motif -->
+    <!-- Diya Base Lamp Bowl -->
+    <path
+        android:pathData="M32,60 C32,73 42,79 54,79 C66,79 76,73 76,60 C76,57 73,56 70,57 C64,59 58,60 54,60 C50,60 44,59 38,57 C35,56 32,57 32,60 Z"
+        android:fillColor="#FFE082" />
+    
+    <!-- Diya Base Pedestal -->
+    <path
+        android:pathData="M46,78 L62,78 L65,82 L43,82 Z"
+        android:fillColor="#FFD54F" />
+
+    <!-- Radiant Glow Ring -->
+    <path
+        android:pathData="M54,43 m-18,0 a18,18 0 1,1 36,0 a18,18 0 1,1 -36,0"
+        android:strokeWidth="2.5"
+        android:strokeColor="#66FFF9C4"
+        android:fillColor="#00000000" />
+
+    <!-- Outer Flame Flame Shape -->
+    <path
+        android:pathData="M54,23 C54,23 41,37 41,47 C41,54 46.8,59 54,59 C61.2,59 67,54 67,47 C67,37 54,23 54,23 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="23"
+                android:endX="54"
+                android:endY="59"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFF9C4" />
+                <item android:offset="0.4" android:color="#FFD54F" />
+                <item android:offset="1.0" android:color="#FF6D00" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Inner Flame Core -->
+    <path
+        android:pathData="M54,32 C54,32 47,40 47,48 C47,52 50.1,55 54,55 C57.9,55 61,52 61,48 C61,40 54,32 54,32 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Sacred Tilak / Gada Crown Top Accent -->
+    <path
+        android:pathData="M53,17 L55,17 L56,22 L52,22 Z"
+        android:fillColor="#FFF59D" />
+
+</vector>

@@ -1,0 +1,6 @@
+{
+  "name": "Hanuman Sankalpam Tracker",
+  "description": "Track your 11-day Hanuman Sankalpam vow with daily 11-count chanting tracker, Brahma Muhurtam reminders, and sacred prayer text.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,497 @@
+:root {
+  --primary: #D35400;
+  --primary-container: #FFEBD6;
+  --secondary: #6A1B9A;
+  --surface: #FFFFFF;
+  --bg: #FBF7F0;
+  --text-primary: #2C1810;
+  --text-secondary: #70584D;
+  --gold: #F39C12;
+  --success: #2E7D32;
+  --radius: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 12px 12px calc(env(safe-area-inset-bottom, 20px) + 16px) 12px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(44, 24, 16, 0.06);
+}
+
+/* Header */
+.sacred-header {
+  background: linear-gradient(180deg, #FFF1E6 0%, #FFFFFF 100%);
+  border: 1px solid #F3DFC8;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.logo-box {
+  width: 44px;
+  height: 44px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(211, 84, 0, 0.25);
+}
+
+.telugu-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Mandali', sans-serif;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.muhurtam-banner {
+  background: rgba(211, 84, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.banner-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.loc-pill {
+  background: #E8D7C6;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  margin-left: auto;
+}
+
+.sleep-line {
+  color: var(--secondary);
+}
+
+.overall-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.progress-track {
+  height: 10px;
+  background: #EEDCCE;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+/* Japa Counter Card */
+.japa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.japa-header h2 {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.goal-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.badge {
+  background: var(--primary-container);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge.done {
+  background: #E8F5E9;
+  color: var(--success);
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.beads-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+
+.bead {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #D5C2B1;
+  background: #F1E5DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all 0.25s ease;
+}
+
+.bead.done {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.bead.current {
+  background: var(--gold);
+  color: black;
+  transform: scale(1.25);
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(243, 156, 18, 0.6);
+}
+
+.counter-display {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+
+.circle-graphic {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.ring-fill {
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-title {
+  font-size: 0.65rem;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+}
+
+.circle-number {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.circle-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.1s ease;
+  min-height: 48px;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  width: 100%;
+  height: 60px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 14px rgba(211, 84, 0, 0.35);
+}
+
+.primary-btn:disabled {
+  background: #D9C8BA;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.outline-btn {
+  background: transparent;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.counter-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.util-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn, .icon-btn-round {
+  background: #F3EAE1;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.icon-btn:active, .icon-btn-round:active {
+  background: #E5D5C6;
+}
+
+/* 11 Days Pathway Grid */
+.section-heading {
+  font-size: 1.05rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.day-cell {
+  background: #F8F1EA;
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.day-cell.selected {
+  border-color: var(--primary);
+  background: #FFEBD6;
+}
+
+.day-cell.completed {
+  background: #E8F5E9;
+  border-color: #81C784;
+}
+
+.day-cell .num {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.day-cell .status {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+}
+
+/* Settings */
+.time-adjuster {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.dropdown {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #D5C2B1;
+  font-weight: 600;
+  background: white;
+}
+
+.sleep-note {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  align-items: flex-end;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 24px 24px 0 0;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 -8px 24px rgba(0,0,0,0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-header h3 {
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #EEDCCE;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.lang-selector {
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-selector select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #D5C2B1;
+}
+
+.prayer-body {
+  overflow-y: auto;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  white-space: pre-line;
+  padding-bottom: 16px;
+}

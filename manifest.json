@@ -1,0 +1,25 @@
+{
+  "name": "హనుమాన్ చాలీసా సంకల్పం - Hanuman Sankalpam",
+  "short_name": "Sankalpam",
+  "description": "11-Day Sri Hanuman Chalisa Sankalpam & Brahma Muhurtam Tracker",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFF8F0",
+  "theme_color": "#D35400",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

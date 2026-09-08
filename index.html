@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <title>హనుమాన్ చాలీసా సంకల్పం - Hanuman Sankalpam</title>
+
+  <!-- iOS / Safari PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sankalpam">
+  <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=192&auto=format&fit=crop&q=80">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D35400">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Mandali&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sacred Header Card -->
+    <header class="card sacred-header">
+      <div class="header-top">
+        <div class="logo-box">🚩</div>
+        <div class="header-text">
+          <h1 class="telugu-title">హనుమాన్ చాలీసా సంకల్పం</h1>
+          <p class="subtitle">11 Days • 11 Times Daily at Brahma Muhurtam</p>
+        </div>
+        <button id="btn-open-prayer" class="icon-btn" title="Read Hanuman Chalisa & Sankalpam">📖</button>
+      </div>
+
+      <!-- Brahma Muhurtam & Sleep Schedule Banner -->
+      <div class="muhurtam-banner">
+        <div class="banner-line">
+          <span class="symbol">🌅</span>
+          <strong id="brahma-time-text">Brahma Muhurtam: 04:30 AM</strong>
+          <span id="location-text" class="loc-pill">Hyderabad (GPS)</span>
+        </div>
+        <div class="banner-line sleep-line">
+          <span class="symbol">🌙</span>
+          <span id="sleep-time-text">7-Hour Sleep Goal: Bedtime at 09:30 PM</span>
+        </div>
+      </div>
+
+      <!-- Overall Sankalpam Progress -->
+      <div class="overall-progress">
+        <div class="progress-labels">
+          <span id="active-day-label">Day 1 of 11 Active</span>
+          <span id="progress-stats">0/11 Days (0/121 recitations)</span>
+        </div>
+        <div class="progress-track">
+          <div id="overall-bar" class="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 11 Japa Mala Beads & Counter Card -->
+    <main class="card japa-card">
+      <div class="japa-header">
+        <div>
+          <h2 id="current-day-heading">Day 1 Recitation</h2>
+          <p class="goal-sub">Daily 11 Times Goal</p>
+        </div>
+        <span id="day-status-pill" class="badge">11 remaining</span>
+      </div>
+
+      <!-- 11 Mala Beads Visualization -->
+      <div class="mala-container">
+        <p class="section-label">11 CHALISA RECITATIONS (MALA BEADS)</p>
+        <div class="beads-row" id="beads-row">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Circular Counter Display -->
+      <div class="counter-display">
+        <div class="circle-graphic">
+          <svg class="progress-ring" width="180" height="180">
+            <circle class="ring-bg" stroke="#F0E3D3" stroke-width="12" fill="transparent" r="76" cx="90" cy="90"/>
+            <circle id="ring-progress" class="ring-fill" stroke="#D35400" stroke-width="12" stroke-linecap="round" fill="transparent" r="76" cx="90" cy="90"/>
+          </svg>
+          <div class="circle-content">
+            <span class="circle-title">CHALISA READINGS</span>
+            <span id="counter-value" class="circle-number">0</span>
+            <span class="circle-sub">of 11 times</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big Primary Chant Button -->
+      <button id="btn-chant" class="btn primary-btn chant-btn">
+        <span>🪔</span> Read 1 Time (+1)
+      </button>
+
+      <!-- Action Buttons Row -->
+      <div class="counter-actions">
+        <button id="btn-quick-chalisa" class="btn outline-btn">📖 Read Chalisa</button>
+        <div class="util-btns">
+          <button id="btn-undo" class="icon-btn-round" title="Undo 1 chant (-1)">↩️</button>
+          <button id="btn-reset-day" class="icon-btn-round" title="Reset Today Count">🔄</button>
+          <button id="btn-toggle-sound" class="icon-btn-round" title="Toggle Temple Chime">🔔</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 11-Day Journey Pathway Grid -->
+    <section class="card pathway-card">
+      <h3 class="section-heading">11-Day Sankalpam Journey</h3>
+      <div class="days-grid" id="days-grid">
+        <!-- Days 1 to 11 generated dynamically -->
+      </div>
+    </section>
+
+    <!-- Brahma Muhurtam & Sleep Schedule Settings Card -->
+    <section class="card settings-card">
+      <h3 class="section-heading">Brahma Muhurtam & Sleep Goal Schedule</h3>
+      <div class="time-adjuster">
+        <label for="dawn-time-select">Dawn Wake-Up Time:</label>
+        <select id="dawn-time-select" class="dropdown">
+          <option value="04:00">04:00 AM (Early Dawn)</option>
+          <option value="04:30" selected>04:30 AM (Brahma Muhurtam)</option>
+          <option value="05:00">05:00 AM (Sunrise Dawn)</option>
+          <option value="05:30">05:30 AM</option>
+        </select>
+      </div>
+      <p class="sleep-note" id="sleep-note-text">
+        Going to bed at <strong>09:30 PM</strong> guarantees you complete a full <strong>7 hours of rest</strong> so you wake up alert for your 11 Hanuman Chalisa recitations at 04:30 AM.
+      </p>
+      <div class="settings-actions">
+        <button id="btn-gps-detect" class="btn outline-btn">📍 Auto Detect GPS Dawn</button>
+        <button id="btn-test-notification" class="btn outline-btn">🌙 Test Bedtime Alert</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Sacred Prayer & Chalisa Modal Sheet -->
+  <div id="prayer-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>శ్రీ హనుమాన్ చాలీసా & సంకల్పం</h3>
+        <button id="btn-close-modal" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="chalisa">Hanuman Chalisa (40 Chaupais)</button>
+        <button class="tab-btn" data-tab="sankalpa">11-Day Sankalpam Rule</button>
+      </div>
+      <div class="lang-selector">
+        <label for="lang-select">Script: </label>
+        <select id="lang-select">
+          <option value="telugu" selected>తెలుగు (Telugu)</option>
+          <option value="english">English (Transliteration)</option>
+          <option value="hindi">हिन्दी (Hindi)</option>
+        </select>
+      </div>
+      <div id="prayer-text-container" class="prayer-body">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
